@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maître MASSAODY | Avocat Fiscaliste · Montpellier</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+
+/* ── VARIABLES ── */
+:root {
+    --navy:    #0d1b2a;
+    --gold:    #c9a84c;
+    --gold2:   #a88030;
+    --bg:      #f9f9f9;
+    --white:   #ffffff;
+    --text:    #333333;
+    --mist:    #888888;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: var(--text);
+    background: var(--white);
+}
+
+/* ── NAVBAR ── */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+    background: var(--navy);
+    border-bottom: 1px solid rgba(201,168,76,0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--white);
+}
+
+.logo span { color: var(--gold); }
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #c8d3df;
+    font-weight: 400;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover { color: var(--gold); }
+
+.btn-contact {
+    border: 1px solid var(--gold) !important;
+    padding: 8px 20px;
+    color: var(--gold) !important;
+    transition: background 0.3s, color 0.3s !important;
+}
+
+.btn-contact:hover {
+    background: var(--gold) !important;
+    color: var(--navy) !important;
+}
+
+/* ── HERO ── */
+.hero {
+    height: 88vh;
+    background:
+        linear-gradient(rgba(13,27,42,0.72), rgba(13,27,42,0.72)),
+        url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=1920')
+        no-repeat center center / cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white);
+}
+
+.hero-content { max-width: 760px; padding: 0 1.5rem; }
+
+.hero-eyebrow {
+    display: inline-block;
+    font-size: 0.72rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.2rem;
+    border-bottom: 1px solid rgba(201,168,76,0.4);
+    padding-bottom: 0.5rem;
+}
+
+.hero-content h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.4rem;
+    line-height: 1.15;
+    margin-bottom: 1.2rem;
+}
+
+.hero-content h1 em {
+    font-style: italic;
+    color: var(--gold);
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    font-weight: 300;
+    color: #c8d3df;
+    max-width: 540px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-btns {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.cta-main {
+    display: inline-block;
+    padding: 14px 38px;
+    background: var(--gold);
+    color: var(--navy);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.85rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    transition: background 0.3s;
+}
+
+.cta-main:hover { background: var(--gold2); color: var(--white); }
+
+.cta-sec {
+    display: inline-block;
+    padding: 14px 38px;
+    border: 1px solid rgba(200,211,223,0.45);
+    color: #c8d3df;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 0.85rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    transition: border-color 0.3s, color 0.3s;
+}
+
+.cta-sec:hover { border-color: var(--gold); color: var(--gold); }
+
+/* ── EXPERTISES ── */
+.services {
+    padding: 90px 10%;
+    text-align: center;
+    background: var(--bg);
+}
+
+.section-eyebrow {
+    font-size: 0.68rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.8rem;
+}
+
+.services h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.4rem;
+    margin-bottom: 14px;
+    color: var(--navy);
+}
+
+.section-sub {
+    font-size: 0.95rem;
+    color: var(--mist);
+    max-width: 520px;
+    margin: 0 auto 50px;
+    font-weight: 300;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 28px;
+}
+
+.card {
+    background: var(--white);
+    padding: 38px 32px;
+    border-radius: 2px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.06);
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: left;
+    border-bottom: 2px solid transparent;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.1);
+    border-bottom-color: var(--gold);
+}
+
+.card-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.75rem;
+    color: var(--gold);
+    letter-spacing: 0.1em;
+    margin-bottom: 1rem;
+}
+
+.card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+    color: var(--navy);
+}
+
+.card p {
+    font-size: 0.88rem;
+    color: #666;
+    line-height: 1.75;
+}
+
+/* ── PROFIL ── */
+.profil {
+    padding: 90px 10%;
+    background: var(--white);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: center;
+}
+
+.profil-text .section-eyebrow { text-align: left; display: block; }
+
+.profil-text h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.4rem;
+    color: var(--navy);
+    margin-bottom: 1.4rem;
+    line-height: 1.2;
+}
+
+.profil-text h2 em { font-style: italic; color: var(--gold); }
+
+.profil-text p {
+    font-size: 0.92rem;
+    color: #555;
+    line-height: 1.9;
+    margin-bottom: 1rem;
+}
+
+.profil-text p strong { color: var(--navy); font-weight: 600; }
+
+.creds {
+    margin-top: 1.8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+}
+
+.cred {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 0.85rem;
+    color: #555;
+}
+
+.cdot {
+    width: 6px; height: 6px;
+    background: var(--gold);
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+/* profil visual side */
+.profil-visual {
+    position: relative;
+    height: 440px;
+}
+
+.pv-rect {
+    position: absolute;
+    top: 0; left: 0;
+    width: 78%; height: 80%;
+    background: var(--navy);
+}
+
+.pv-outline {
+    position: absolute;
+    bottom: 0; right: 0;
+    width: 68%; height: 70%;
+    border: 2px solid var(--gold);
+}
+
+.pv-badge {
+    position: absolute;
+    bottom: 2.5rem; left: 50%;
+    transform: translateX(-50%);
+    background: var(--white);
+    border-left: 3px solid var(--gold);
+    padding: 1.2rem 1.6rem;
+    width: 80%;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.08);
+    z-index: 2;
+}
+
+.pv-badge blockquote {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-style: italic;
+    color: var(--navy);
+    line-height: 1.5;
+}
+
+.pv-badge cite {
+    display: block;
+    margin-top: 0.5rem;
+    font-size: 0.65rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-style: normal;
+}
+
+/* ── CHIFFRES ── */
+.chiffres {
+    background: var(--navy);
+    padding: 60px 10%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-top: 2px solid var(--gold);
+}
+
+.cnum {
+    text-align: center;
+    padding: 1.5rem;
+    border-right: 1px solid rgba(201,168,76,0.2);
+}
+
+.cnum:last-child { border-right: none; }
+
+.cnum-big {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.2rem;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 0.4rem;
+}
+
+.cnum-lbl {
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #c8d3df;
+}
+
+/* ── CONTACT / FOOTER ── */
+footer {
+    background: var(--navy);
+    color: var(--white);
+    padding: 70px 10% 28px;
+    border-top: 2px solid var(--gold);
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 4rem;
+    margin-bottom: 50px;
+}
+
+.footer-brand h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    color: var(--white);
+    margin-bottom: 0.2rem;
+}
+
+.footer-brand h3 span { color: var(--gold); }
+
+.footer-brand .tag {
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #c8d3df;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.footer-brand p {
+    font-size: 0.82rem;
+    color: rgba(200,211,223,0.4);
+    line-height: 1.8;
+}
+
+/* contact form inline */
+.contact-form {
+    grid-column: 1;
+}
+
+.contact-form h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    color: var(--white);
+    margin-bottom: 0.3rem;
+}
+
+.contact-form .sub {
+    font-size: 0.72rem;
+    color: rgba(200,211,223,0.35);
+    letter-spacing: 0.1em;
+    margin-bottom: 1.8rem;
+}
+
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+.fgrp { display: flex; flex-direction: column; gap: 0.3rem; margin-bottom: 1rem; }
+
+.fgrp label {
+    font-size: 0.6rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(200,211,223,0.3);
+}
+
+.fgrp input, .fgrp select, .fgrp textarea {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(201,168,76,0.22);
+    color: var(--white);
+    padding: 0.72rem 0.9rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.84rem;
+    font-weight: 300;
+    outline: none;
+    transition: border-color 0.25s;
+    resize: none;
+    width: 100%;
+}
+
+.fgrp input:focus, .fgrp select:focus, .fgrp textarea:focus { border-color: var(--gold); }
+.fgrp select option { background: var(--navy); }
+.fgrp input::placeholder, .fgrp textarea::placeholder { color: rgba(200,211,223,0.22); }
+
+.btn-submit {
+    background: var(--gold);
+    color: var(--navy);
+    border: none;
+    padding: 0.9rem 2.4rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.25s;
+}
+
+.btn-submit:hover { background: var(--gold2); color: var(--white); }
+
+/* footer info col */
+.fcol h4 {
+    font-size: 0.68rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.2rem;
+}
+
+.fcol ul { list-style: none; display: flex; flex-direction: column; gap: 0.65rem; }
+
+.fcol li { font-size: 0.82rem; color: rgba(200,211,223,0.42); }
+
+.fcol a {
+    color: rgba(200,211,223,0.42);
+    text-decoration: none;
+    transition: color 0.25s;
+}
+
+.fcol a:hover { color: var(--gold); }
+
+.footer-bottom {
+    border-top: 1px solid rgba(201,168,76,0.12);
+    padding-top: 1.6rem;
+    text-align: center;
+    font-size: 0.75rem;
+    color: rgba(200,211,223,0.22);
+}
+
+.footer-bottom a { color: rgba(200,211,223,0.22); text-decoration: none; }
+.footer-bottom a:hover { color: var(--gold); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+    .navbar { padding: 16px 5%; }
+    .nav-links { display: none; }
+
+    .hero { height: auto; padding: 100px 5% 70px; }
+    .hero-content h1 { font-size: 2.2rem; }
+
+    .services { padding: 60px 5%; }
+    .profil { grid-template-columns: 1fr; padding: 60px 5%; gap: 3rem; }
+    .profil-visual { height: 300px; }
+
+    .chiffres { grid-template-columns: 1fr; padding: 40px 5%; }
+    .cnum { border-right: none; border-bottom: 1px solid rgba(201,168,76,0.15); padding: 1.2rem 0; }
+    .cnum:last-child { border-bottom: none; }
+
+    footer { padding: 50px 5% 20px; }
+    .footer-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .form-row { grid-template-columns: 1fr; }
+}
+
+    </style>
+</head>
+<body>
+
+<!-- ── NAVBAR ── -->
+<nav class="navbar">
+    <div class="logo">MAÎTRE <span>MASSAODY</span></div>
+    <ul class="nav-links">
+        <li><a href="#accueil">Accueil</a></li>
+        <li><a href="#expertise">Expertises</a></li>
+        <li><a href="#cabinet">Le Cabinet</a></li>
+        <li><a href="#contact" class="btn-contact">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- ── HERO ── -->
+<header id="accueil" class="hero">
+    <div class="hero-content">
+        <span class="hero-eyebrow">Avocat Fiscaliste · Barreau de Montpellier</span>
+        <h1>Défense fiscale<br><em>&amp; stratégie</em> patrimoniale</h1>
+        <p>Maître MASSAODY met sa formation de haut niveau au service de vos intérêts fiscaux — conseil, contentieux et optimisation pour entreprises et particuliers en Occitanie.</p>
+        <div class="hero-btns">
+            <a href="#contact" class="cta-main">Prendre rendez-vous</a>
+            <a href="#expertise" class="cta-sec">Nos expertises</a>
+        </div>
+    </div>
+</header>
+
+<!-- ── EXPERTISES ── -->
+<section id="expertise" class="services">
+    <p class="section-eyebrow">Domaines d'intervention</p>
+    <h2>Nos Domaines d'Expertise</h2>
+    <p class="section-sub">Du conseil préventif à la défense contentieuse, un accompagnement complet et personnalisé.</p>
+
+    <div class="services-grid">
+        <div class="card">
+            <div class="card-num">01</div>
+            <h3>Contentieux Fiscal</h3>
+            <p>Défense devant les juridictions administratives et judiciaires, de la réclamation préalable jusqu'aux juridictions d'appel.</p>
+        </div>
+        <div class="card">
+            <div class="card-num">02</div>
+            <h3>Fiscalité des Entreprises</h3>
+            <p>Optimisation fiscale, restructurations, intégrations fiscales et accompagnement des dirigeants dans leurs décisions stratégiques.</p>
+        </div>
+        <div class="card">
+            <div class="card-num">03</div>
+            <h3>Fiscalité Internationale</h3>
+            <p>Conventions fiscales bilatérales, établissements stables et optimisation de structures transfrontalières.</p>
+        </div>
+        <div class="card">
+            <div class="card-num">04</div>
+            <h3>Patrimoine &amp; Transmission</h3>
+            <p>Structuration patrimoniale, donations, successions, holdings familiales et conseil IFI pour les particuliers.</p>
+        </div>
+        <div class="card">
+            <div class="card-num">05</div>
+            <h3>Contrôles &amp; Vérifications</h3>
+            <p>Assistance lors des vérifications de comptabilité et des procédures de rectification fiscale.</p>
+        </div>
+        <div class="card">
+            <div class="card-num">06</div>
+            <h3>TVA &amp; Taxes Indirectes</h3>
+            <p>Audit et sécurisation des positions TVA, régimes particuliers et gestion des risques de contrôle.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ── CHIFFRES ── -->
+<div class="chiffres">
+    <div class="cnum">
+        <div class="cnum-big">2022</div>
+        <div class="cnum-lbl">Diplôme DJFP — Montpellier</div>
+    </div>
+    <div class="cnum">
+        <div class="cnum-big">2026</div>
+        <div class="cnum-lbl">Ouverture du cabinet</div>
+    </div>
+    <div class="cnum">
+        <div class="cnum-big">100%</div>
+        <div class="cnum-lbl">Engagement pour chaque client</div>
+    </div>
+</div>
+
+<!-- ── PROFIL ── -->
+<section id="cabinet" class="profil">
+    <div class="profil-text">
+        <span class="section-eyebrow">Le Cabinet</span>
+        <h2>Maître<br><em>MASSAODY</em></h2>
+        <p><strong>Maître MASSAODY</strong> est avocat inscrit au Barreau de Montpellier depuis 2026. Après l'obtention de son Diplôme Juridique de Formation Professionnelle (DJFP) à la Faculté de droit de Montpellier en 2022 et la fin de ses études en 2025, il a ouvert son cabinet pour mettre une formation rigoureuse au service de ses clients.</p>
+        <p>Spécialisé en droit fiscal des entreprises et des particuliers, il intervient aussi bien en conseil préventif qu'en contentieux, avec une approche pédagogique qui place le client au cœur de chaque dossier.</p>
+        <p>Basé à <strong>Montpellier</strong>, le cabinet accompagne les entrepreneurs, PME, professions libérales et particuliers de la région Occitanie.</p>
+
+        <div class="creds">
+            <div class="cred"><div class="cdot"></div>Avocat au Barreau de Montpellier — depuis 2026</div>
+            <div class="cred"><div class="cdot"></div>DJFP — Faculté de droit de Montpellier (2022)</div>
+            <div class="cred"><div class="cdot"></div>Études de droit achevées en 2025</div>
+            <div class="cred"><div class="cdot"></div>Spécialisation en droit fiscal des entreprises et des particuliers</div>
+        </div>
+    </div>
+
+    <div class="profil-visual">
+        <div class="pv-rect"></div>
+        <div class="pv-outline"></div>
+        <div class="pv-badge">
+            <blockquote>« La fiscalité n'est pas une contrainte — c'est un levier stratégique que chaque décision doit intégrer dès le départ. »</blockquote>
+            <cite>Maître MASSAODY</cite>
+        </div>
+    </div>
+</section>
+
+<!-- ── FOOTER / CONTACT ── -->
+<footer id="contact">
+    <div class="footer-grid">
+
+        <!-- Formulaire de contact -->
+        <div class="contact-form">
+            <h4>Prendre rendez-vous</h4>
+            <p class="sub">Consultation confidentielle — Montpellier</p>
+
+            <div class="form-row">
+                <div class="fgrp">
+                    <label>Nom complet</label>
+                    <input type="text" placeholder="Jean Dupont">
+                </div>
+                <div class="fgrp">
+                    <label>Téléphone</label>
+                    <input type="tel" placeholder="+33 6 00 00 00 00">
+                </div>
+            </div>
+            <div class="fgrp">
+                <label>Adresse e-mail</label>
+                <input type="email" placeholder="jean.dupont@exemple.fr">
+            </div>
+            <div class="fgrp">
+                <label>Domaine de votre demande</label>
+                <select>
+                    <option value="" disabled selected>Sélectionner une expertise</option>
+                    <option>Contentieux fiscal</option>
+                    <option>Fiscalité des entreprises</option>
+                    <option>Fiscalité internationale</option>
+                    <option>Patrimoine &amp; transmission</option>
+                    <option>Contrôle fiscal</option>
+                    <option>TVA &amp; taxes indirectes</option>
+                    <option>Autre</option>
+                </select>
+            </div>
+            <div class="fgrp">
+                <label>Votre message</label>
+                <textarea rows="3" placeholder="Décrivez brièvement votre situation..."></textarea>
+            </div>
+            <button class="btn-submit" onclick="submitForm(event)">Envoyer la demande</button>
+        </div>
+
+        <!-- Coordonnées -->
+        <div class="fcol">
+            <h4>Contact</h4>
+            <ul>
+                <li>Montpellier, Hérault</li>
+                <li>Barreau de Montpellier</li>
+                <li style="margin-top:0.4rem"><a href="tel:0644763723">06 44 76 37 23</a></li>
+                <li><a href="mailto:massoady.avocat@gmail.com">massoady.avocat@gmail.com</a></li>
+            </ul>
+        </div>
+
+        <!-- Expertises -->
+        <div class="fcol">
+            <h4>Expertises</h4>
+            <ul>
+                <li>Contentieux fiscal</li>
+                <li>Fiscalité d'entreprise</li>
+                <li>Fiscalité internationale</li>
+                <li>Patrimoine &amp; IFI</li>
+                <li>TVA</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        &copy; 2026 Maître MASSAODY — Avocat Fiscaliste · Montpellier &nbsp;|&nbsp;
+        <a href="#">Mentions légales</a> &nbsp;|&nbsp;
+        <a href="#">Politique de confidentialité</a>
+    </div>
+</footer>
+
+<script>
+    function submitForm(e) {
+        e.preventDefault();
+        const b = e.target;
+        const t = b.textContent;
+        b.textContent = 'Demande envoyée ✓';
+        b.style.cssText = 'background:#2a5a3a;color:#fff';
+        setTimeout(() => { b.textContent = t; b.style.cssText = ''; }, 3000);
+    }
+
+    /* nav scroll effect */
+    const nav = document.querySelector('.navbar');
+    window.addEventListener('scroll', () => {
+        nav.style.boxShadow = scrollY > 40
+            ? '0 4px 20px rgba(0,0,0,0.25)'
+            : 'none';
+    });
+</script>
+
+</body>
+</html>
